@@ -7,7 +7,7 @@ WORKDIR /tmp
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     apt-get install -y \
     nginx \
-    php7.1-fpm \
+    php7.2-fpm \
     supervisor && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /etc/nginx /var/run/php /var/log/supervisor
