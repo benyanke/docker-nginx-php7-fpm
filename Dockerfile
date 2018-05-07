@@ -5,7 +5,7 @@ MAINTAINER "Vitor Carreira" <vitor.carreira@gmail.com>
 WORKDIR /tmp
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && composer self-update
 
 # Install Nginx
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
