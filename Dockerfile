@@ -1,6 +1,16 @@
 FROM benyanke/php7:7.2
 
-MAINTAINER "Vitor Carreira" <vitor.carreira@gmail.com>
+MAINTAINER "Ben Yanke" <ben@benyanke.com>
+
+# Laravel container command controls
+# Set to '1' to run these commands from running on container start
+ENV CMD_ROOT /var/www
+ENV RUN_PERMISSION_FIX 0
+ENV RUN_COMPOSER 0
+ENV RUN_WEBPACK 0
+ENV RUN_MIGRATIONS 0
+ENV RUN_DB_SEED 0
+ENV RUN_VENDOR_PUBLISH 0
 
 WORKDIR /tmp
 
