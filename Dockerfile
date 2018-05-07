@@ -42,6 +42,6 @@ EXPOSE 80 9000
 # Set workdir back to www dir so that console users are in right position
 WORKDIR /var/www
 
-ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
 CMD ["bash", "-c", "/opt/startup/startup.sh && /usr/bin/supervisord"]
