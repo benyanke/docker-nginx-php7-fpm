@@ -1,9 +1,10 @@
-FROM vcarreira/php7:latest
+FROM benyanke/php7:7.2
 
 MAINTAINER "Vitor Carreira" <vitor.carreira@gmail.com>
 
 WORKDIR /tmp
 
+# RUN apt update && apt search fpm && apt search php && exit; apt-get update && DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     apt-get install -y \
     nginx \
