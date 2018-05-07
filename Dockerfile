@@ -4,6 +4,10 @@ MAINTAINER "Vitor Carreira" <vitor.carreira@gmail.com>
 
 WORKDIR /tmp
 
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+
+# Install Nginx
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     apt-get install -y \
     nginx \
@@ -12,6 +16,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
 
 RUN mkdir -p /etc/nginx /var/run/php /var/log/supervisor
 
+# Copy in config files
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx-supervisor.conf /etc/supervisor/conf.d/nginx.conf
 COPY www.conf /etc/php/7.2/fpm/pool.d/www.conf
