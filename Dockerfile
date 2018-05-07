@@ -14,7 +14,7 @@ RUN mkdir -p /etc/nginx /var/run/php /var/log/supervisor
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx-supervisor.conf /etc/supervisor/conf.d/nginx.conf
-COPY www.conf /etc/php/7.1/fpm/pool.d/www.conf
+COPY www.conf /etc/php/7.2/fpm/pool.d/www.conf
 COPY startup.sh /opt/startup/startup.sh
 
 VOLUME ["/var/www", "/etc/nginx/sites-enabled"]
