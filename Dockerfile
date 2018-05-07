@@ -14,6 +14,10 @@ ENV RUN_VENDOR_PUBLISH 0
 
 WORKDIR /tmp
 
+# Install dumb-init
+RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.1/dumb-init_1.2.1_amd64
+RUN chmod +x /usr/local/bin/dumb-init
+
 # Install Composer
 RUN curl --silent --show-error https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer
 
@@ -39,4 +43,6 @@ EXPOSE 80 9000
 # Set workdir back to www dir so that console users are in right position
 WORKDIR /var/www
 
-CMD /opt/startup/startup.sh && /usr/bin/supervisord
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+
+CMD ["bash", "-c", "/opt/startup/startup.sh && /usr/bin/supervisord"]
