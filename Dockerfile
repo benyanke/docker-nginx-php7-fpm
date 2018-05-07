@@ -15,7 +15,7 @@ ENV RUN_VENDOR_PUBLISH 0
 WORKDIR /tmp
 
 # Install Composer
-RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
+RUN curl --silent --show-error https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer
 
 # Install Nginx
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
