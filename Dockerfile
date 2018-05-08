@@ -39,4 +39,4 @@ EXPOSE 80 9000
 # Set workdir back to www dir so that console users are in right position
 WORKDIR /var/www
 
-CMD /opt/startup/startup.sh && /usr/bin/supervisord
+CMD /opt/startup/startup.sh && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
