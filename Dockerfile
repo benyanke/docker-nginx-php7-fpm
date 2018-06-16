@@ -26,6 +26,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     nginx \
     php7.2-fpm \
     npm \
+    libpng-dev \
     supervisor && apt-get clean && rm -rf /var/lib/apt/lists/* && \
     npm install npm@latest -g
 
