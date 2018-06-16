@@ -35,7 +35,7 @@ fi
 # Run Webpack
 if [ "$RUN_WEBPACK" = "1" ] ; then
   echo "Running Laravel Mix";
-  (cd $CMD_DIR ; echo "Not yet implemented" )
+  (cd $CMD_DIR ; npm run dev )
 else
   echo "Skipping Laravel Mix";
 fi
