@@ -27,7 +27,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     php7.2-fpm \
     npm \
     supervisor && apt-get clean && rm -rf /var/lib/apt/lists/* && \
-    npm update -g npm
+    npm install npm@latest -g
 
 RUN mkdir -p /etc/nginx /var/run/php /var/log/supervisor
 
