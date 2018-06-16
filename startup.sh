@@ -35,7 +35,8 @@ fi
 # Run Webpack
 if [ "$RUN_WEBPACK" = "1" ] ; then
   echo "Running Laravel Mix";
-  (cd $CMD_DIR ; npm run dev )
+  (cd $CMD_DIR ; npm install || npm install || npm install)
+  (cd $CMD_DIR ; npm run dev || npm run dev)
 else
   echo "Skipping Laravel Mix";
 fi
