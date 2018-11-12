@@ -23,11 +23,13 @@ RUN curl --silent --show-error https://getcomposer.org/installer | php && mv com
 # Install Nginx
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     apt-get install -y \
-    nginx \
-    php7.2-fpm \
-    npm \
-    libpng-dev \
-    supervisor && apt-get clean && rm -rf /var/lib/apt/lists/* && \
+      nginx \
+      php7.2-fpm \
+      php7.2-bcmath \
+      npm \
+      libpng-dev \
+      supervisor \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* && \
     npm install npm@latest -g
 
 RUN mkdir -p /etc/nginx /var/run/php /var/log/supervisor
