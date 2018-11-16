@@ -11,5 +11,7 @@ This image is used as a base for [Laravel Docker Development Environment](https:
 
 ## Tags
 
-This repo uses two dockerfiles: `Dockerfile-7.2`, tracking tag `7.2`, and eventually will be adding 
-`Dockerfile-7.3`, tracking future tag `7.3`.
+This repo uses two dockerfiles: `Dockerfile-7.2`, tracking tag `7.2`, and `Dockerfile-7.3`, tracking tag `7.3`. 
+
+Note that the 7.3 is still in testing, and you shouldn't use it for production without doing your own test. 
+Until this message is removed from the readme, the `7.3` tag may break without notice or fast fix.
