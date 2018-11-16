@@ -7,3 +7,9 @@ An automated build for this repo is available on the [Docker Hub](https://regist
 This is a fork of [Docker Laravel](https://github.com/vcarreira/docker-nginx-php7-fpm).
 
 This image is used as a base for [Laravel Docker Development Environment](https://github.com/benyanke/laravel-dev-env), and other projects.
+
+
+## Tags
+
+This repo uses two dockerfiles: `Dockerfile-7.2`, tracking tag `7.2`, and eventually will be adding 
+`Dockerfile-7.3`, tracking future tag `7.3`.
