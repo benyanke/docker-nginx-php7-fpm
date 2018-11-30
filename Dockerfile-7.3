@@ -39,6 +39,9 @@ COPY nginx-supervisor.conf /etc/supervisor/conf.d/nginx.conf
 COPY www.conf /etc/php/7.3/fpm/pool.d/www.conf
 COPY startup.sh /opt/startup/startup.sh
 
+# Log nginx to STDOUT and STDERR
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
+
 VOLUME ["/var/www", "/etc/nginx/sites-enabled", "/opt/startup"]
 
 EXPOSE 80 9000
