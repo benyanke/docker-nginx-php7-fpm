@@ -45,7 +45,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/
 
 VOLUME ["/var/www", "/etc/nginx/sites-enabled", "/opt/startup"]
 
-EXPOSE 80 9000
+EXPOSE 80
 
 # Set workdir back to www dir so that console users are in right position
 WORKDIR /var/www
