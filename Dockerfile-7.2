@@ -44,6 +44,10 @@ COPY startup.sh /opt/startup/startup.sh
 # Log nginx to STDOUT and STDERR
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
 
+# Copy enabled modules from CLI dir to the new FPM module, so that any modules added and enabled to
+# CLI in the parent image are now available to FPM as well
+RUN cp -a /etc/php/7.2/cli/conf.d/* /etc/php/7.2/fpm/conf.d
+
 VOLUME ["/var/www", "/etc/nginx/sites-enabled", "/opt/startup"]
 
 EXPOSE 80
