@@ -55,6 +55,9 @@ EXPOSE 80
 # Set workdir back to www dir so that console users are in right position
 WORKDIR /var/www
 
+# Add composer bin path
+ENV PATH="/var/www/vendor/bin:${PATH}"
+
 ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
 CMD ["bash", "-c", "/opt/startup/startup.sh && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf"]
