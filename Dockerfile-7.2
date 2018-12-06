@@ -17,9 +17,6 @@ WORKDIR /tmp
 # Install dumb-init
 RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 && chmod +x /usr/local/bin/dumb-init
 
-# Install Composer
-RUN curl --silent --show-error https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer
-
 # Install Nginx
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     apt-get install -y \
