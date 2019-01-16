@@ -56,4 +56,4 @@ ENV PATH="/var/www/vendor/bin:${PATH}"
 
 ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
-CMD ["bash", "-c", "/opt/startup/startup.sh && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf"]
+CMD ["/bin/bash", "-c", "/bin/bash /opt/startup/startup.sh && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf"]

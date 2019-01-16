@@ -67,7 +67,6 @@ else
 fi
 
 
-
 # Exiting
 echo "Startup complete!"
 exit 0;
