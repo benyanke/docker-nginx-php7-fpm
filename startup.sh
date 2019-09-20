@@ -57,7 +57,6 @@ else
   echo "Skipping DB seeds";
 fi
 
-
 # Run Vendor Publish
 if [ "$RUN_VENDOR_PUBLISH" = "1" ] ; then
   echo "Running Vendor Publish";
@@ -65,7 +64,6 @@ if [ "$RUN_VENDOR_PUBLISH" = "1" ] ; then
 else
   echo "Skipping Vendor Publish";
 fi
-
 
 # Exiting
 echo "Startup complete!"
